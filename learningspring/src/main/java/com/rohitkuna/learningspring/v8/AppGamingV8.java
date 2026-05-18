@@ -1,21 +1,19 @@
-package com.rohitkuna.learningspring.v6;
+package com.rohitkuna.learningspring.v8;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.rohitkuna.learningspring.v6.game.GameRunner;
-import com.rohitkuna.learningspring.v6.game.MarioGame;
-import com.rohitkuna.learningspring.v6.game.Game;
+import com.rohitkuna.learningspring.v8.game.GameRunner;
+import com.rohitkuna.learningspring.v8.game.Game;
 
 @Configuration
-@ComponentScan("com.rohitkuna.learningspring.v6.game") // necessary as Spring doesn't know where to find Game 
+@ComponentScan("com.rohitkuna.learningspring.v8.game") // necessary as Spring doesn't know where to find Game 
 // though it's annotated with @Component, we need to mention the package where to find it
-public class AppGamingV6 {
+public class AppGamingV8 {
 
     public static void main(String[] args){
-        try (var context = new AnnotationConfigApplicationContext(AppGamingV6.class)){
+        try (var context = new AnnotationConfigApplicationContext(AppGamingV8.class)){
 
             context.getBean(Game.class).up();
 

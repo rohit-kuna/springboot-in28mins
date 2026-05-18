@@ -4,9 +4,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 @Configuration
 public class HelloWorldConfiguration {
+
+    // when we write @Bean on a method, 
+    // it tells spring that this method will return an object instance
+    // that should be registered as a bean in the spring application context
+
+    // When we write @Bean on a method, 
+    // it tells spring that this method will return an object instance so acts same as @Component on class
     
     @Bean
     public String nameBean(){
@@ -36,13 +44,16 @@ public class HelloWorldConfiguration {
 
     // Reusing Beans to create new 
     // passing method calls
+    // also called as method calling injection explicit autowiring as we are explicitly calling the methods to get the beans
+    // way of autowiring
     @Bean
     public Person personBean2() {
         return new Person(nameBean(), ageBean());
     }
 
     // passing as params
-    // also called as mwethod parameter injection, implicit autowiring as beans are instances that we pass
+    // also called as method parameter injection, implicit autowiring as beans are instances that we pass
+    // way of autowiring
     @Bean
     public Person personBean3(String nameBean, int ageBean) { // pass names of methods (in case of custom name include the custom name)
         return new Person(nameBean, ageBean);

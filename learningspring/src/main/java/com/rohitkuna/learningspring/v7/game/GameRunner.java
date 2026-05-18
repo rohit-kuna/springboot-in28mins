@@ -1,16 +1,13 @@
-package com.rohitkuna.learningspring.v6.game;
+package com.rohitkuna.learningspring.v7.game;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GameRunner {
 
-    private Game game;
-
-    public GameRunner(@Qualifier("PacmanGameQualifier") Game game){
-        this.game=game;
-    }
+    @Autowired
+    private Game game; // field Dependency Injection
 
     public void run(){
         System.out.println("Running game: "+game);

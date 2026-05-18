@@ -1,10 +1,10 @@
-package com.rohitkuna.gamerunner_v1;
+package com.rohitkuna.learningspring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GamerunnerV1ApplicationTests {
+class LearningSpringApplicationTests {
 
 	@Test
 	void contextLoads() {

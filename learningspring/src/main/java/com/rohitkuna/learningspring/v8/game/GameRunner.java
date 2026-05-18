@@ -1,6 +1,6 @@
-package com.rohitkuna.learningspring.v6.game;
+package com.rohitkuna.learningspring.v8.game;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,9 +8,12 @@ public class GameRunner {
 
     private Game game;
 
-    public GameRunner(@Qualifier("PacmanGameQualifier") Game game){
+    @Autowired
+    public GameRunner(Game game){
         this.game=game;
     }
+    // In case of contructor dependency injection the @Autowired is optional
+    // as from 4+ constructor injection is considred automatically
 
     public void run(){
         System.out.println("Running game: "+game);
