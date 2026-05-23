@@ -1,7 +1,6 @@
 package com.rohitkuna.learningspring.v9.game;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication.Running;
 import org.springframework.stereotype.Component;
 
 @Component
